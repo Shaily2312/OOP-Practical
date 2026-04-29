@@ -1,0 +1,55 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.geometry.Pos;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+    public void start(Stage stage) {
+        HBox root = new HBox(20);
+        root.setAlignment(Pos.BOTTOM_CENTER);
+
+        VBox pBox = new VBox(5);
+        pBox.setAlignment(Pos.BOTTOM_CENTER);
+        Rectangle pRect = new Rectangle(50, 200 * 0.20);
+        pRect.setFill(Color.RED);
+        Text pText = new Text("Projects — 20%");
+        pBox.getChildren().addAll(pRect, pText);
+
+        VBox qBox = new VBox(5);
+        qBox.setAlignment(Pos.BOTTOM_CENTER);
+        Rectangle qRect = new Rectangle(50, 200 * 0.10);
+        qRect.setFill(Color.BLUE);
+        Text qText = new Text("Quizzes — 10%");
+        qBox.getChildren().addAll(qRect, qText);
+
+        VBox mBox = new VBox(5);
+        mBox.setAlignment(Pos.BOTTOM_CENTER);
+        Rectangle mRect = new Rectangle(50, 200 * 0.30);
+        mRect.setFill(Color.GREEN);
+        Text mText = new Text("Midterm Exams — 30%");
+        mBox.getChildren().addAll(mRect, mText);
+
+        VBox fBox = new VBox(5);
+        fBox.setAlignment(Pos.BOTTOM_CENTER);
+        Rectangle fRect = new Rectangle(50, 200 * 0.40);
+        fRect.setFill(Color.ORANGE);
+        Text fText = new Text("Final Exam — 40%");
+        fBox.getChildren().addAll(fRect, fText);
+
+        root.getChildren().addAll(pBox, qBox, mBox, fBox);
+
+        Scene scene = new Scene(root, 400, 300);
+        stage.setScene(scene);
+        stage.setTitle("Grade Distribution");
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
